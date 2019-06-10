@@ -1,0 +1,17 @@
+//Font Family
+// @font-face {
+//     font-family: 'Gaegu-Bold';
+//     src: url("../assets/fonts/Gaegu-Bold.ttf") format('truetype');
+// }
+html {
+    height: 100vh;
+}
+body {
+    text-align: center;
+    background-color: #7CCABC;
+    color: white;
+    height: 100%;
+}
+#root, .App {
+    height: 100%;
+}

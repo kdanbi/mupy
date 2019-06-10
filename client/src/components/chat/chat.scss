@@ -1,0 +1,264 @@
+@import url("https://fonts.googleapis.com/css?family=Arial:400,700");
+
+$light: white;
+$dark: #453a94;
+$bot-text: #7028e4;
+$user-text: #e5b2ca;
+$red: #ff7871;
+$red-dark: #db0035;
+$shadow: rgba(#f43b47,0.4);
+$stroke: 4px;
+$br: 1.5rem;
+$dot-size: 9px;
+
+$inner-margin: 15px;
+
+$avatar-size: 52px;
+
+$avatar-url: "../header/logo.svg";
+$bg-url: "https://zephyo.github.io/22Days/code/10/graphics/manu-franco-unsplash.jpg";
+$header-url: "https://zephyo.github.io/22Days/code/10/graphics/rikkakuma.gif";
+
+$snap: cubic-bezier(0.36, -0.04, 0.15, 1.64);
+
+$highlight1: rgba(255, 255, 255, 0.2);
+$highlight: rgba(255, 255, 255, 0.5);
+
+h1 {
+  font-size: 7vh;
+}
+
+h2 {
+  font-size: 4.5vh;
+}
+
+html,
+body,
+#app {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+}
+
+body {
+  font-family: "Arial", monospace;
+  color: $light;
+  background-attachment: fixed;
+}
+
+#app,
+body,
+.app-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: stretch;
+  .chat-container {
+    animation: fade 0.5s ease 0.2s both;
+    flex: 1 1 70vh;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    .chat-header {
+      //border: $stroke solid $dark;
+      border-bottom: 0;
+      flex: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .msg-container {
+      background: white;
+      padding: $inner-margin $inner-margin 0 $inner-margin;
+      flex: auto;
+      display: flex;
+      flex-direction: column;
+      overflow-y: scroll;
+      .user-message-container {
+        align-self: flex-end;
+      }
+      .bot-message-container {
+        flex: none;
+        display: flex;
+        .bot-avatar {
+          background-image: url($avatar-url);
+          background-size: cover;
+          background-position: center;
+          border-radius: 50%;
+          width: $avatar-size;
+          height: $avatar-size;
+          margin-right: 1vw;
+        }
+        &:first-child {
+          .chat-bubble {
+            animation: pop 0.4s $snap 0.9s both;
+          }
+        }
+      }
+      .chat-bubble {
+        display: inline-block;
+        border-radius: $br;
+        padding: 1rem;
+        margin-bottom: 0.5rem;
+        max-width: 60%;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        word-break: break-word;
+        hyphens: auto;
+        opacity: 0;
+        animation: pop 0.4s $snap forwards;
+        will-change: transform;
+        color: white;
+        &.user {
+          float: right;
+          border-top-right-radius: 0;
+          background: $dark;
+          color: $user-text;
+          transform-origin: top right;
+          color: white;
+          font-size: 14px;
+          text-align: left;
+          max-width: 70%;
+        }
+        &.bot {
+          background: #7CCABC;
+          color: white;
+          transform-origin: top left;
+          margin-left: 0.5rem;
+          font-size: 14px;
+          text-align: left;
+        }
+      }
+    }
+
+    .input-container {
+      animation: up 0.35s $snap 0.5s both;
+      border: 3px #7CCABC solid;
+      flex: none;
+      height: 14vh;
+      max-height: 100px;
+      background: white;
+      display: flex;
+      justify-content: stretch;
+      //transition: background 0.3s ease;
+      input {
+        font-weight: 500;
+        flex: auto;
+        border: none;
+        font-family: "Arial";
+        color: black;
+        font-size: 1rem;
+        padding: 1.5rem;
+      }
+
+      .input-submit {
+        margin: 2vh;
+        background: #7271AB;
+        border: none;
+        border-radius: 5px;
+        box-shadow: 4px 4px lightgrey;
+        width: 10vh;
+        position: relative;
+        &:after {
+          content: "";
+          width: 0.5rem;
+          height: 0.5rem;
+          border: 5px solid $light;
+          border-left: 0;
+          border-bottom: 0;
+          transform: rotate(45deg);
+          position: absolute;
+          top: calc(50% - 0.5rem);
+          left: calc(50% - 0.5rem);
+        }
+      }
+    }
+  }
+}
+#chat {
+  overflow-wrap: break-word;
+}
+.background {
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url($bg-url) no-repeat 0 0;
+  filter: blur(5vh);
+  background-size: cover;
+  background-position: center;
+}
+
+@keyframes pop {
+  from {
+    opacity: 0;
+    transform: scale(0.66);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes grow {
+	from
+  {		
+    transform: scale(0);
+  }
+	to
+	{	
+    transform: none;
+  }
+}
+
+@keyframes up {
+	from
+  {		
+    opacity: 0;
+		transform: translateY(1rem);
+  }
+	to
+	{	
+    opacity: 1;
+		transform: none;
+  }
+}
+#spotify {
+  width: 100%;
+  height: 5rem;
+}
+.player {
+  &__loginPage {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    & a {
+      font-family: 'Patrick Hand SC', cursive;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 3rem;
+    }
+  }
+}
