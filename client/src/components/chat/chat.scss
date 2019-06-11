@@ -1,6 +1,9 @@
-@import url("https://fonts.googleapis.com/css?family=Arial:400,700");
+$header: rgba(58, 187, 171, 0.70);
+$botbubble: rgba(235, 231, 231, 0.79);;
+$userbubble: linear-gradient(180deg, rgba(107, 67, 158, 0.664) 58.33%, rgba(180, 111, 234, 0.8) 100%);
 
-$light: white;
+$botbubblefont: #362828;
+
 $dark: #453a94;
 $bot-text: #7028e4;
 $user-text: #e5b2ca;
@@ -15,7 +18,7 @@ $inner-margin: 15px;
 
 $avatar-size: 52px;
 
-$avatar-url: "../header/mupy_logo.svg";
+$avatar-url: "../header/chatlogo.svg";
 $bg-url: "https://zephyo.github.io/22Days/code/10/graphics/manu-franco-unsplash.jpg";
 $header-url: "https://zephyo.github.io/22Days/code/10/graphics/rikkakuma.gif";
 
@@ -42,8 +45,8 @@ body,
 }
 
 body {
-  font-family: "Arial", monospace;
-  color: $light;
+  font-family: 'Roboto', sans-serif;
+  color: white;
   background-attachment: fixed;
 }
 
@@ -69,21 +72,24 @@ body,
     flex-direction: column;
     height: 100%;
     .chat-header {
-      //border: $stroke solid $dark;
+      padding: 0 1rem;
       border-bottom: 0;
       flex: none;
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
       height: 5rem;
-      &__logo {
-        width: 5rem;
+      background: $header;
+      &__left {
+        width: 139px;
+        height: 58px;
       }
-      &__name {
-        width: 7rem;
-        margin-top: 6px;
-        margin-left: 0.5rem;
-        display:none;
+      &__right {
+        width: 35px;
+        height: 37px;
+        background-blend-mode: color-dodge;
+        opacity: 0.2;
+        //box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
       }
     }
 
@@ -132,7 +138,7 @@ body,
         &.user {
           float: right;
           border-top-right-radius: 0;
-          background: $dark;
+          background: $userbubble;
           color: $user-text;
           transform-origin: top right;
           color: white;
@@ -141,8 +147,8 @@ body,
           max-width: 70%;
         }
         &.bot {
-          background: #7CCABC;
-          color: white;
+          background: $botbubble;
+          color: $botbubblefont;
           transform-origin: top left;
           margin-left: 0.5rem;
           font-size: 14px;
@@ -183,7 +189,7 @@ body,
           content: "";
           width: 0.5rem;
           height: 0.5rem;
-          border: 5px solid $light;
+          border: 5px solid white;
           border-left: 0;
           border-bottom: 0;
           transform: rotate(45deg);

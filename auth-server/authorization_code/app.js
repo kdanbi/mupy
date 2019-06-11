@@ -24,7 +24,7 @@ var client_id = 'f5e8e6f86fdd4361a33a3daaa5bcf808'; // Your client id
 var client_secret = '71a41656726a455a9cc526e9cbf2b168'; // Your secret
 var redirect_uri = 'http://localhost:8888/callback'; // Or Your redirect uri  
 
-spotifyApi.setAccessToken('BQBX0abuuQEwDiLw04z107pzq0odoG5xKqEjOv2qNoUdRpJTAxtTYOWyH0C8lKQghht9CnI5jPlrwF1rB0ka_KUJ3e7FIu_6GkVOBBx__9O2vBdd-31HMu0r51lBR3Mfg5U3O9VCdBI6EspCEcJqDUw9ABHXfP48UrTH');
+spotifyApi.setAccessToken('BQAgDF8G422vVpHEZ8-0Nef3ryZFhAETlBJycgbEXtEy_CmvWuqvRMHJLXovl91tNYEThBDSnzu1hko-qKtiFRUaZRMIMruaKEMKXoDEuk6lbvW8THrdWMhdU5rJM3yJJMCf7IU6FuKcqwiXKpVO7MXd3W1SyqFvfzbt');
 
 /**
  * Generates a random string containing numbers and letters

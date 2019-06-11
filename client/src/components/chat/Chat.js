@@ -11,10 +11,6 @@ let spotifyApi = new SpotifyWebApiNode({
   redirectUri: "http://localhost:8888/callback"
 });
 
-spotifyApi.setAccessToken(
-  "BQBX0abuuQEwDiLw04z107pzq0odoG5xKqEjOv2qNoUdRpJTAxtTYOWyH0C8lKQghht9CnI5jPlrwF1rB0ka_KUJ3e7FIu_6GkVOBBx__9O2vBdd-31HMu0r51lBR3Mfg5U3O9VCdBI6EspCEcJqDUw9ABHXfP48UrTH "
-);
-
 //Thanks to the following for help:
 // * https://codepen.io/johnludena/pen/JvMvzB
 // * https://codepen.io/jenning/pen/JZzeJW
@@ -34,6 +30,25 @@ export default class Chat extends React.Component {
   constructor(props) {
     super(props);
     this.state = data;
+  }
+  //authentication
+  componentDidMount () {
+		const params = this.getHashParams();
+		const token = params.access_token;
+		if (token) {
+		  spotifyApi.setAccessToken(token);
+		}
+	}
+  getHashParams() {
+    var hashParams = {};
+    var e, r = /([^&;=]+)=?([^&;]*)/g,
+        q = window.location.hash.substring(1);
+    e = r.exec(q)
+    while (e) {
+       hashParams[e[1]] = decodeURIComponent(e[2]);
+       e = r.exec(q);
+    }
+    return hashParams;
   }
   //Function adds user and bot messages to state
   updateUserMessages = newMessage => {
@@ -181,7 +196,6 @@ export default class Chat extends React.Component {
   render() {
     console.log("mood", this.state.moodIdentifier);
     console.log("spotify", this.state.spotifyURL);
-    console.log();
     return (
       <div className="app-container">
         <div className="chat-container">

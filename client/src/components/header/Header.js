@@ -1,13 +1,13 @@
 import React from 'react';
 import '../chat/chat.scss';
-import logo from './mupy_logo.svg';
-import mupy from './mupy_name.svg';
+import headerLeft from './header-left.svg';
+import headerRight from './header-right.svg';
 
 let ChatHeader = props => {
     return (
       <div className="chat-header">
-            <img className="chat-header__logo" src={logo} alt="app logo" />
-            <img className="chat-header__name" src={mupy} alt="app logo" />
+            <img className="chat-header__left" src={headerLeft} alt="app logo" />
+            <img className="chat-header__right" src={headerRight} alt="app logo" />
       </div>
     );
   };

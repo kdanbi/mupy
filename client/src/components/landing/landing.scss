@@ -1,7 +1,8 @@
 @import '../../App.scss';
-
+$landing-page: linear-gradient(0deg, #554B7B 36.17%, #47C2AC 89.43%);
 
 .landing-page {
+    background: $landing-page;
     display: flex;
     flex-direction: column;
     justify-content: center;
