@@ -12,7 +12,7 @@ let spotifyApi = new SpotifyWebApiNode({
 });
 
 spotifyApi.setAccessToken(
-  "BQBzq3YzPG-JG0EyeLXUXfDPTFc73ru1PxG0xpwWaFGTX2B8Mp5n3J6B0Bsm613XCogDdOjrMjzuiFo3ToZgYrOIgUs80zB6C6aIH-Hlbf-Km_d0VcZedsYiYZamrFwoNoXUom_13EKX-jso8b3NMXBv9LeOYs4uIV9f"
+  "BQBX0abuuQEwDiLw04z107pzq0odoG5xKqEjOv2qNoUdRpJTAxtTYOWyH0C8lKQghht9CnI5jPlrwF1rB0ka_KUJ3e7FIu_6GkVOBBx__9O2vBdd-31HMu0r51lBR3Mfg5U3O9VCdBI6EspCEcJqDUw9ABHXfP48UrTH "
 );
 
 //Thanks to the following for help:
@@ -23,10 +23,11 @@ spotifyApi.setAccessToken(
 let data = {
   userMessages: [],
   botMessages: [],
-  botGreeting: `Hi (Name Goes Here)!`,
+  botGreeting: `Hi I'm mupy - your music therapy bot! What's your name?`,
   botLoading: false,
   moodIdentifier: [],
-  spotifyURL: ""
+  spotifyURL: "",
+  shouldContinue: false
 };
 
 export default class Chat extends React.Component {
@@ -45,7 +46,8 @@ export default class Chat extends React.Component {
     this.setState({
       userMessages: updatedMessages.concat(newMessage), //adds every user message entered to userMessages in state
       botLoading: true,
-      newMessage: newMessage
+      newMessage: newMessage,
+      shouldContinue: true
     });
 
     let request = new Request(
@@ -146,11 +148,10 @@ export default class Chat extends React.Component {
       }
     );
 
-    if (this.state.moodIdentifier.length > 0) {
+    if (!this.state.moodIdentifier.length > 0 || this.state.shouldContinue===true) {
       fetch(request) //fetch mood keyword from DialogFlow
         .then(response => response.json())
         .then(json => {
-            console.log(json)
           let currentMood = Object.keys(json.result.parameters);
           return currentMood
         })
@@ -158,12 +159,17 @@ export default class Chat extends React.Component {
             spotifyApi
             .searchPlaylists(currentMood.join(', ')) //query
             .then(data => {
-              let link = data.body.playlists.items[0].uri;
+              console.log('playlists',data.body.playlists.items)
+              let num = Math.floor(Math.random() * (data.body.playlists.items.length));  
+              console.log(data.body.playlists.items)
+              let link = data.body.playlists.items[num].uri;
               let playlistID = link.slice(17);
               let spotifyURL = `https://open.spotify.com/embed/playlist/${playlistID}`;
               this.setState({ 
                 spotifyURL: spotifyURL,
-                moodIdentifier: currentMood});
+                moodIdentifier: currentMood,
+                shouldContinue: false
+              });
             })
             .catch(err => {
               console.log(err);

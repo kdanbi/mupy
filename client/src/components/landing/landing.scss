@@ -1,5 +1,6 @@
 @import '../../App.scss';
 
+
 .landing-page {
     display: flex;
     flex-direction: column;
@@ -7,61 +8,157 @@
     align-items: center;
     margin: auto;
     height: 100%;
-    &__introduction {
-        font-size: 4rem;
-        font-family: 'Patrick Hand SC', cursive;
-        &--partA, &--partB {
-            font-size: 3rem;
-            font-family: 'Patrick Hand SC', cursive;
+    &__partA {
+        // -webkit-animation: fadeinout 3s linear forwards;
+        // animation: fadeinout 3s linear forwards;
+        visibility: hidden;
+        animation: fade-in 2s 1 forwards;
+        //animation: fade-out 2s 1 forwards;
+        //animation-delay: 3s;
+        &--logo:hover {
+            animation: shake 0.5s; 
+            animation-iteration-count: infinite; 
         }
-        &--partC {
-            font-weight: bold;
-            font-size: 6rem;
-            font-family: 'Patrick Hand SC', cursive;
-        }
-    }
-    &__button {
-        width: 15rem;
-        height:2.5rem;
-        border-radius: 1.5rem;
-        margin-top: 2rem;
-        font-size: 1.5rem;
-        font-family: 'Patrick Hand SC', cursive;
-        color: white;
-        background-color: #7271AB;
-    
-    }
-    &__input{
-        &--question {
-            font-size: 3rem;
-            font-family: 'Patrick Hand SC', cursive;
-            margin-bottom: 2rem;
-            margin-top: 0;
-        }
-    }
-    &__form {
-        display: flex;
-        //margin-left: 1rem;
-        justify-content: center;
-        &--name {
-            width: 13rem;
-            height: 4rem;
-            font-size: 2rem;
-            font-family: 'Patrick Hand SC', cursive;
-            padding-left: 1rem;
-        }
-        &--button {
-            height: 100%;
-            width: 4rem;
+        &--intro {
+            font-family: Strait, sans-serif;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 15px;
+            line-height: 16px;
             text-align: center;
-            font-size: 1.3rem;
-            font-family: 'Patrick Hand SC', cursive;
-            margin-left: 0.5rem;
-            border-radius: 0 1rem 1rem 0;
-            background-color: #7271AB;
-            border: none;
-            color: #7CCABC;
-            font-weight: bold;
+            color: #FFFFFF;
+        }
+    }
+    &__partB {
+        visibility: hidden;
+        animation: fade-in 2s 1 forwards;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 4rem;
+        &--intro {
+            margin-top: 5rem;
+            font-family: Strait, sans-serif;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 15px;
+            line-height: 16px;
+            text-align: center;
+            color: #FFFFFF;
         }
     }
 }
+//button border animation
+  .landing-page__partB--intro{
+    position: relative;
+    text-decoration: none;
+    width: 10rem;
+    text-align: center;
+    line-height: 30px;
+    display: inline-block;
+    color: white;
+  }
+  .landing-page__partB--intro:before{
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    width: 0;
+    height: 0;
+    background: transparent;
+    border: 1px solid transparent;
+  }
+  .landing-page__partB--intro:hover:before{
+    animation: animate 1s linear forwards;
+  }
+  @keyframes animate{
+    0%{
+      width: 0;
+      height: 0;
+      border-top-color: white;
+      border-bottom-color: transparent;
+      border-left-color: transparent;
+      border-right-color: transparent;
+    }
+    50%{
+      width: 100%;
+      height: 0;
+      border-top-color: white;
+      border-bottom-color: transparent;
+      border-left-color: transparent;
+      border-right-color: white;
+    }
+    100%{
+      width: 100%;
+      height: 100%;
+      border-top-color: white;
+      border-bottom-color: transparent;
+      border-left-color: transparent;
+      border-right-color: white;
+    }
+  }
+  .landing-page__partB--intro:after{
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    width: 0;
+    height: 0;
+    background: transparent;
+    border: 1px solid transparent;
+  }
+  .landing-page__partB--intro:hover:after{
+    animation: animate2 1s linear forwards;
+    animation-delay: 1s;
+  }
+  @keyframes animate2{
+    0%{
+      width: 0;
+      height: 0;
+      border-top-color: transparent;
+      border-bottom-color: transparent;
+      border-left-color: white;
+      border-right-color: transparent;
+    }
+    50%{
+      width: 0;
+      height: 100%;
+      border-top-color: transparent;
+      border-bottom-color: white;
+      border-left-color: white;
+      border-right-color: transparent;
+    }
+    100%{
+      width: 100%;
+      height: 100%;
+      border-top-color: transparent;
+      border-bottom-color: white;
+      border-left-color: white;
+      border-right-color: transparent;
+    }
+  }
+
+@keyframes fade-in {
+    0% { opacity: 0.0; visibility: visible;}
+    100% { opacity: 1.0; visibility: visible;}
+}
+@keyframes fade-out {
+    0% { opacity: 1.0; visibility: visible;}
+    100% { opacity: 0; visibility: visible;}
+}
+  
+  @keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+  }

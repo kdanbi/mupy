@@ -15,7 +15,7 @@ $inner-margin: 15px;
 
 $avatar-size: 52px;
 
-$avatar-url: "../header/logo.svg";
+$avatar-url: "../header/mupy_logo.svg";
 $bg-url: "https://zephyo.github.io/22Days/code/10/graphics/manu-franco-unsplash.jpg";
 $header-url: "https://zephyo.github.io/22Days/code/10/graphics/rikkakuma.gif";
 
@@ -75,6 +75,16 @@ body,
       display: flex;
       justify-content: center;
       align-items: center;
+      height: 5rem;
+      &__logo {
+        width: 5rem;
+      }
+      &__name {
+        width: 7rem;
+        margin-top: 6px;
+        margin-left: 0.5rem;
+        display:none;
+      }
     }
 
     .msg-container {
@@ -255,7 +265,7 @@ body,
     justify-content: center;
     align-items: center;
     & a {
-      font-family: 'Patrick Hand SC', cursive;
+      font-family: 'Strait', sans-serif;
       text-decoration: none;
       font-weight: bold;
       font-size: 3rem;

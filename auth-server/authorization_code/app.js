@@ -22,9 +22,9 @@ var spotifyApi = new SpotifyWebApi({
 
 var client_id = 'f5e8e6f86fdd4361a33a3daaa5bcf808'; // Your client id
 var client_secret = '71a41656726a455a9cc526e9cbf2b168'; // Your secret
-var redirect_uri = 'http://localhost:8888/callback'; // Or Your redirect uri
+var redirect_uri = 'http://localhost:8888/callback'; // Or Your redirect uri  
 
-spotifyApi.setAccessToken('BQBzq3YzPG-JG0EyeLXUXfDPTFc73ru1PxG0xpwWaFGTX2B8Mp5n3J6B0Bsm613XCogDdOjrMjzuiFo3ToZgYrOIgUs80zB6C6aIH-Hlbf-Km_d0VcZedsYiYZamrFwoNoXUom_13EKX-jso8b3NMXBv9LeOYs4uIV9f');
+spotifyApi.setAccessToken('BQBX0abuuQEwDiLw04z107pzq0odoG5xKqEjOv2qNoUdRpJTAxtTYOWyH0C8lKQghht9CnI5jPlrwF1rB0ka_KUJ3e7FIu_6GkVOBBx__9O2vBdd-31HMu0r51lBR3Mfg5U3O9VCdBI6EspCEcJqDUw9ABHXfP48UrTH');
 
 /**
  * Generates a random string containing numbers and letters

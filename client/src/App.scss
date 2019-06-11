@@ -1,14 +1,11 @@
-//Font Family
-// @font-face {
-//     font-family: 'Gaegu-Bold';
-//     src: url("../assets/fonts/Gaegu-Bold.ttf") format('truetype');
-// }
+$landing-page: linear-gradient(0deg, #554B7B 36.17%, #47C2AC 89.43%);
+
 html {
     height: 100vh;
 }
 body {
     text-align: center;
-    background-color: #7CCABC;
+    background: $landing-page;
     color: white;
     height: 100%;
 }

@@ -1,8 +1,10 @@
 import React from 'react';
-import Typist from 'react-typist';
+//import Typist from 'react-typist';
 import './landing.scss';
 import '../../App.scss';
 import { Link } from 'react-router-dom';
+import logo from './mupy_logo.svg';
+import mupy from './mupy_name.svg';
 
 export default class Landing extends React.Component {
     state = {
@@ -20,23 +22,19 @@ export default class Landing extends React.Component {
         return (
             this.state.getStarted ? (
                 <section className="landing-page">
-                    <h1 className="landing-page__input--question">What's your name?</h1>
-                    <form className="landing-page__form" onSubmit={this.handleSubmit}>
-                        <input className="landing-page__form--name" type="text" name="name" ref={(input) => this.input = input} placeholder="You Name Here"></input>
-                        <Link to={{ pathname: "/player", state: {username: this.state.user_name} }} ><input className="landing-page__form--button" type="submit" value="NEXT" /></Link>
-                    </form>
+                    <div className="landing-page__partB">
+                        <img className="landing-page__partB---logo" src={mupy} alt="logo" />
+                        <Link to="/player"><h2 className="landing-page__partB--intro">Discover your sound.</h2></Link>
+                    </div>
+
                 </section>
             ) :
             (            
             <section className="landing-page">
-            <Typist className="landing-page__introduction">
-                <span className="landing-page__introduction--partA">Heeey you!</span>
-                <Typist.Backspace count={13} delay={1000} />
-                <span className="landing-page__introduction--partA">I am your music therapy bot!</span>
-                <Typist.Backspace count={23} delay={1000} />
-                <span className='landing-page__introduction--partC'>mupy!</span>
-            </Typist>
-            <button className="landing-page__button" type="click" onClick={this.changeState}>Get Started!</button>
+                <div className="landing-page__partA">
+                    <img className="landing-page__partA--logo" onClick={this.changeState} src={logo} alt="logo" />
+                    <h2 className="landing-page__partA--intro">Music therapy anytime.</h2>
+                </div>
             </section>
         )
         )
