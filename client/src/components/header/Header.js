@@ -1,7 +1,7 @@
 import React from 'react';
 import '../chat/chat.scss';
 import headerLeft from './header-left.svg';
-import headerRight from './header-right.svg';
+import headerRight from './group.svg';
 
 let ChatHeader = props => {
     return (

@@ -1,8 +1,8 @@
 $header: rgba(58, 187, 171, 0.70);
-$botbubble: rgba(235, 231, 231, 0.79);;
-$userbubble: linear-gradient(180deg, rgba(107, 67, 158, 0.664) 58.33%, rgba(180, 111, 234, 0.8) 100%);
+$botbubble: rgba(144, 220, 206, 0.14);;
+$userbubble: linear-gradient(180deg, rgba(89, 7, 109, 0.8) 58.33%, rgba(80, 8, 137, 0.8) 100%);
 
-$botbubblefont: #362828;
+$botbubblefont: #595959;
 
 $dark: #453a94;
 $bot-text: #7028e4;
@@ -11,7 +11,7 @@ $red: #ff7871;
 $red-dark: #db0035;
 $shadow: rgba(#f43b47,0.4);
 $stroke: 4px;
-$br: 1.5rem;
+$br: 3rem;
 $dot-size: 9px;
 
 $inner-margin: 15px;
@@ -85,10 +85,9 @@ body,
         height: 58px;
       }
       &__right {
-        width: 35px;
-        height: 37px;
+        width: 130px;
         background-blend-mode: color-dodge;
-        opacity: 0.2;
+        //opacity: 0.2;
         //box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
       }
     }
@@ -102,6 +101,7 @@ body,
       overflow-y: scroll;
       .user-message-container {
         align-self: flex-end;
+        width: 100%;
       }
       .bot-message-container {
         flex: none;
@@ -124,8 +124,8 @@ body,
       .chat-bubble {
         display: inline-block;
         border-radius: $br;
-        padding: 1rem;
-        margin-bottom: 0.5rem;
+        padding: 0.5rem 1.3rem;
+        margin: 0.5rem 0;
         max-width: 60%;
         overflow-wrap: break-word;
         word-wrap: break-word;
@@ -144,7 +144,6 @@ body,
           color: white;
           font-size: 14px;
           text-align: left;
-          max-width: 70%;
         }
         &.bot {
           background: $botbubble;
@@ -153,6 +152,7 @@ body,
           margin-left: 0.5rem;
           font-size: 14px;
           text-align: left;
+          margin: auto 0;
         }
       }
     }
@@ -166,6 +166,7 @@ body,
       background: white;
       display: flex;
       justify-content: stretch;
+      border-radius: 2rem;
       //transition: background 0.3s ease;
       input {
         font-weight: 500;
@@ -181,7 +182,7 @@ body,
         margin: 2vh;
         background: #7271AB;
         border: none;
-        border-radius: 5px;
+        border-radius: 1rem;
         box-shadow: 4px 4px lightgrey;
         width: 10vh;
         position: relative;
@@ -203,6 +204,7 @@ body,
 }
 #chat {
   overflow-wrap: break-word;
+  border-radius: 2rem;
 }
 .background {
   z-index: -1;

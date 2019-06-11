@@ -5,7 +5,7 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <style type="text/css">
     body {
-      background-color: #7CCABC;
+      background: linear-gradient(0deg, #554B7B 36.17%, #47C2AC 89.43%);
     }
       #login, #loggedin {
         display: none;
@@ -26,20 +26,31 @@
         align-items: center;
       }
       #login a {
-        font-family: 'Strait', sans-serif;  
+        font-family: 'Roboto', sans-serif;  
         text-decoration: none;
         font-weight: bold;
-        font-size: 4rem;
-        background-color: white;
-        padding: 1.5rem 4rem;
-        border-radius: 6rem;
+        font-size: 1rem;
+        color: white;
+        padding: 3rem 3rem;
         box-shadow: 10px 10px 8px #888888;
+        border: 1px white solid;
+        
       }
       #login a:active{
-        background-color: #7CCABC;
+        border: 1px #7CCABC solid;
         color: white;
       }
-
+      .btn {
+          animation: shadow-pulse 1s infinite;
+        }
+      @keyframes shadow-pulse{
+      0% {
+            box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.2);
+      }
+      100% {
+            box-shadow: 0 0 0 35px rgba(0, 0, 0, 0);
+      }
+      }
     </style>
   </head>
 
