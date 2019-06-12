@@ -16,11 +16,13 @@ $landing-page: linear-gradient(0deg, #554B7B 36.17%, #47C2AC 89.43%);
         animation: fade-in 2s 1 forwards;
         //animation: fade-out 2s 1 forwards;
         //animation-delay: 3s;
-        &--logo:hover {
-            animation: shake 0.5s; 
+        &--logo {
+            animation: shake 0.3s; 
             animation-iteration-count: infinite; 
+            animation-delay: 4s;
         }
         &--intro {
+            visibility: hidden;
             font-family: Strait, sans-serif;
             font-style: normal;
             font-weight: normal;
@@ -28,6 +30,8 @@ $landing-page: linear-gradient(0deg, #554B7B 36.17%, #47C2AC 89.43%);
             line-height: 16px;
             text-align: center;
             color: #FFFFFF;
+            animation: fade-in 2s 1 forwards;
+            animation-delay: 2s;
         }
     }
     &__partB {
@@ -71,8 +75,8 @@ $landing-page: linear-gradient(0deg, #554B7B 36.17%, #47C2AC 89.43%);
     background: transparent;
     border: 1px solid transparent;
   }
-  .landing-page__partB--intro:hover:before{
-    animation: animate 1s linear forwards;
+  .landing-page__partB--intro:before{
+    animation: animate 2s linear forwards;
   }
   @keyframes animate{
     0%{
@@ -110,8 +114,8 @@ $landing-page: linear-gradient(0deg, #554B7B 36.17%, #47C2AC 89.43%);
     background: transparent;
     border: 1px solid transparent;
   }
-  .landing-page__partB--intro:hover:after{
-    animation: animate2 1s linear forwards;
+  .landing-page__partB--intro:after{
+    animation: animate2 2s linear forwards;
     animation-delay: 1s;
   }
   @keyframes animate2{

@@ -27,6 +27,10 @@ $snap: cubic-bezier(0.36, -0.04, 0.15, 1.64);
 $highlight1: rgba(255, 255, 255, 0.2);
 $highlight: rgba(255, 255, 255, 0.5);
 
+@mixin name {
+  
+}
+
 h1 {
   font-size: 7vh;
 }
@@ -180,7 +184,7 @@ body,
 
       .input-submit {
         margin: 2vh;
-        background: #7271AB;
+        background: linear-gradient(180deg, rgba(50, 0, 114, 0.8) 63.54%, rgba(153, 36, 172, 0.8) 100%);
         border: none;
         border-radius: 1rem;
         box-shadow: 4px 4px lightgrey;
