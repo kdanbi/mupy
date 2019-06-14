@@ -180,6 +180,10 @@ body,
         color: black;
         font-size: 1rem;
         padding: 1.5rem;
+        
+      }
+      input:focus{
+        outline:none;
       }
 
       .input-submit {

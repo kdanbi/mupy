@@ -5,6 +5,8 @@ import Chat from "./components/chat/Chat.js";
 //import Main from './components/Main.js';
 import Player from "./components/player/Player.js";
 
+const pingURL = `${process.env.REACT_AOO_BACKEND_SERVER || 'http://localhost8080.com'}/ping`
+
 class App extends React.Component {
   render() {
     return (
