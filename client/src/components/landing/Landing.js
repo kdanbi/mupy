@@ -22,13 +22,6 @@ export default class Landing extends React.Component {
           this.setState({ isVisible: !this.state.isVisible });
         }, 1000);
     }
-    // componentDidUpdate() {
-    //     if(!this.state.isVisible) {
-    //         setInterval(() => {
-    //             this.setState({ isVisible: !this.state.isVisible });
-    //           }, 4000);
-    //     }
-    // }
     changeState = () => {
         this.setState({getStarted: true})
     }
@@ -42,14 +35,14 @@ export default class Landing extends React.Component {
                 <section className="landing-page">
                     <div className="landing-page__partB">
                         <img pose={this.state.isVisible ? 'visible' : 'hidden'} className="landing-page__partB---logo" src={mupy} alt="logo" />
-                        <a className="landing-page__partB--intro" href="http://localhost:8888"> Discover your sound.</a>
+                        <a className="landing-page__partB--intro" href="http://localhost:8888"> Discover your sound</a>
                     </div>
 
                 </section>
             ) :
             (            
             <section className="landing-page">
-                <Box className="box" pose={this.state.isVisible ? 'visible' : 'hidden'} className="landing-page__partA">
+                <Box pose={this.state.isVisible ? 'visible' : 'hidden'} className="landing-page__partA">
                     <img className="landing-page__partA--logo" onClick={this.changeState} src={logo} alt="logo" />
                     <h2 className="landing-page__partA--intro">Music therapy anytime.</h2>
                 </Box>

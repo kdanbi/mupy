@@ -8,7 +8,7 @@
   publish = "client/build"
 
   # Default build command.
-  command = "cd client && npm install && npm run build"
+  command = "cd auth-server && cd authorization_code && npm install && node app.js"
 
 # Production context: all deploys from the Production branch set in your site's 
 # deploy contexts will inherit these settings.
