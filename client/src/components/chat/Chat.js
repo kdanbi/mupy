@@ -11,11 +11,6 @@ let spotifyApi = new SpotifyWebApiNode({
   redirectUri: "http://localhost:8888/callback"
 });
 
-//Thanks to the following for help:
-// * https://codepen.io/johnludena/pen/JvMvzB
-// * https://codepen.io/jenning/pen/JZzeJW
-// * https://codepen.io/zephyo/pen/MZmdjb?editors=0110
-
 let data = {
   userMessages: [],
   botMessages: [],
@@ -32,21 +27,22 @@ export default class Chat extends React.Component {
     this.state = data;
   }
   //authentication
-  componentDidMount () {
-		const params = this.getHashParams();
-		const token = params.access_token;
-		if (token) {
-		  spotifyApi.setAccessToken(token);
-		}
-	}
+  componentDidMount() {
+    const params = this.getHashParams();
+    const token = params.access_token;
+    if (token) {
+      spotifyApi.setAccessToken(token);
+    }
+  }
   getHashParams() {
     var hashParams = {};
-    var e, r = /([^&;=]+)=?([^&;]*)/g,
-        q = window.location.hash.substring(1);
-    e = r.exec(q)
+    var e,
+      r = /([^&;=]+)=?([^&;]*)/g,
+      q = window.location.hash.substring(1);
+    e = r.exec(q);
     while (e) {
-       hashParams[e[1]] = decodeURIComponent(e[2]);
-       e = r.exec(q);
+      hashParams[e[1]] = decodeURIComponent(e[2]);
+      e = r.exec(q);
     }
     return hashParams;
   }
@@ -163,24 +159,29 @@ export default class Chat extends React.Component {
       }
     );
 
-    if (!this.state.moodIdentifier.length > 0 || this.state.shouldContinue===true) {
+    if (
+      !this.state.moodIdentifier.length > 0 ||
+      this.state.shouldContinue === true
+    ) {
       fetch(request) //fetch mood keyword from DialogFlow
         .then(response => response.json())
         .then(json => {
           let currentMood = Object.keys(json.result.parameters);
-          return currentMood
+          return currentMood;
         })
-        .then((currentMood) => {
-            spotifyApi
-            .searchPlaylists(currentMood.join(', ')) //query
+        .then(currentMood => {
+          spotifyApi
+            .searchPlaylists(currentMood.join(", ")) //query
             .then(data => {
-              console.log('playlists',data.body.playlists.items)
-              let num = Math.floor(Math.random() * (data.body.playlists.items.length));  
-              console.log(data.body.playlists.items)
+              console.log("playlists", data.body.playlists.items);
+              let num = Math.floor(
+                Math.random() * data.body.playlists.items.length
+              );
+              console.log(data.body.playlists.items);
               let link = data.body.playlists.items[num].uri;
               let playlistID = link.slice(17);
               let spotifyURL = `https://open.spotify.com/embed/playlist/${playlistID}`;
-              this.setState({ 
+              this.setState({
                 spotifyURL: spotifyURL,
                 moodIdentifier: currentMood,
                 shouldContinue: false
@@ -189,7 +190,7 @@ export default class Chat extends React.Component {
             .catch(err => {
               console.log(err);
             });
-        })
+        });
     }
   };
 

@@ -1,0 +1,50 @@
+//WORK IN PROGRESS
+@import '../../App.scss';
+body {
+    background: linear-gradient(0deg, #554B7B 36.17%, #47C2AC 89.43%);
+}
+#login, #loggedin {
+    display: none;
+}
+.text-overflow {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 500px;
+}
+.container {
+    height: 100vh;
+}
+#login {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#login a {
+    font-family: 'Roboto', sans-serif;  
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 2rem;
+    color: white;
+    padding: 3rem 3rem;
+    box-shadow: 10px 10px 8px #888888;
+    border: 1px white solid;
+    border-radius: 4rem 0rem 4rem 0rem;
+    
+}
+#login a:active{
+    border: 1px #7CCABC solid;
+    color: white;
+}
+.btn {
+    animation: shadow-pulse 1s infinite;
+    }
+@keyframes shadow-pulse{
+0% {
+        box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.2);
+}
+100% {
+        box-shadow: 0 0 0 35px rgba(0, 0, 0, 0);
+}
+}

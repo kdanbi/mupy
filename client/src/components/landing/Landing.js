@@ -1,8 +1,6 @@
 import React from 'react';
-//import Typist from 'react-typist';
 import './landing.scss';
 import '../../App.scss';
-//import { Link } from 'react-router-dom';
 import logo from './mupy_logo.svg';
 import mupy from './mupy_name.svg';
 import posed from 'react-pose';
@@ -51,4 +49,3 @@ export default class Landing extends React.Component {
         )
     }
 }
-
