@@ -1,5 +1,5 @@
 import React from 'react';
-import './chat.scss';
+import './chat.scss';;
   
 export default class BotBubble extends React.Component {
     render() {
