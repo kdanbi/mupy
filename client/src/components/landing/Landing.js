@@ -33,7 +33,7 @@ export default class Landing extends React.Component {
                 <section className="landing-page">
                     <div className="landing-page__partB">
                         <img pose={this.state.isVisible ? 'visible' : 'hidden'} className="landing-page__partB---logo" src={mupy} alt="logo" />
-                        <a className="landing-page__partB--intro" href="http://localhost:8888"> Discover your sound</a>
+                        <a className="landing-page__partB--intro" href="https://mupy.herokuapp.com/"> Discover your sound</a>
                     </div>
 
                 </section>
