@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "cd auth-server && cd authorization_code && npm install && npx nodemon app.js"
+    "start": "cd auth-server && cd authorization_code && npm install && node app.js"
   },
   "author": "",
   "license": "ISC",
