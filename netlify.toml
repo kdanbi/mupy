@@ -4,5 +4,4 @@ publish = "client/build/"
 command = "npm build"
 
 [[redirects]]
-from = "/*"
-to = "/chat"
+/*    /index.html   200
