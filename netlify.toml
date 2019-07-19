@@ -2,3 +2,7 @@
 base = "client/"
 publish = "client/build/"
 command = "npm build"
+
+[[redirects]]
+from = "/*"
+to = "/chat"
