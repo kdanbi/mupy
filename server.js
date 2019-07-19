@@ -9,16 +9,16 @@ const port = process.env.PORT || 8888;
 const URL = process.env.URL || "http://localhost:8888";
 
 var spotifyApi = new SpotifyWebApi({
-  clientId: 'f5e8e6f86fdd4361a33a3daaa5bcf808',
-  clientSecret: '71a41656726a455a9cc526e9cbf2b168',
+  clientId: process.env.CLIENT_ID,
+  clientSecret: process.env.CLIENT_SECRET,
   redirectUri: `${URL}/callback/`
 }); 
 
-var client_id = 'f5e8e6f86fdd4361a33a3daaa5bcf808'; // Your client id
-var client_secret = '71a41656726a455a9cc526e9cbf2b168'; // Your secret
+var client_id = process.env.CLIENT_ID; // Your client id
+var client_secret = process.env.CLIENT_SECRET; // Your secret
 var redirect_uri = `${URL}/callback/`; // Or Your redirect uri  
 
-spotifyApi.setAccessToken('BQAgDF8G422vVpHEZ8-0Nef3ryZFhAETlBJycgbEXtEy_CmvWuqvRMHJLXovl91tNYEThBDSnzu1hko-qKtiFRUaZRMIMruaKEMKXoDEuk6lbvW8THrdWMhdU5rJM3yJJMCf7IU6FuKcqwiXKpVO7MXd3W1SyqFvfzbt');
+spotifyApi.setAccessToken(process.env.ACCESS_TOKEN);
 
 /**
  * Generates a random string containing numbers and letters
@@ -144,7 +144,6 @@ app.get('/refresh_token', function(req, res) {
     }
   });
 });
-
 
 app.listen(port, () => {
     console.log('server listening on 8888')
