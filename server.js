@@ -5,7 +5,7 @@ var querystring = require('querystring');
 var cookieParser = require('cookie-parser');
 var SpotifyWebApi = require('spotify-web-api-node');
 
-const port = process.env.URL || 8888;
+const port = process.env.PORT || 8888;
 const URL = process.env.URL || "http://localhost:8888";
 
 var spotifyApi = new SpotifyWebApi({
