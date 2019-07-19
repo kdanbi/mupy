@@ -5,12 +5,12 @@ import logo from './mupy_logo.svg';
 import mupy from './mupy_name.svg';
 import posed from 'react-pose';
 
-const heroku = "https://mupy-server.herokuapp.com";
-
 const Box = posed.div({
     hidden: { opacity: 0 },
     visible: { opacity: 1 }
-  });
+});
+
+//const URL = "https://mupy-server.herokuapp.com";
 
 export default class Landing extends React.Component {
     state = {
@@ -19,7 +19,7 @@ export default class Landing extends React.Component {
     }
     componentDidMount() {
         setInterval(() => {
-          this.setState({ isVisible: !this.state.isVisible });
+            this.setState({ isVisible: !this.state.isVisible });
         }, 1000);
     }
     changeState = () => {
@@ -35,7 +35,7 @@ export default class Landing extends React.Component {
                 <section className="landing-page">
                     <div className="landing-page__partB">
                         <img pose={this.state.isVisible ? 'visible' : 'hidden'} className="landing-page__partB---logo" src={mupy} alt="logo" />
-                        <a className="landing-page__partB--intro" href={heroku}> Discover your sound</a>
+                        <a className="landing-page__partB--intro" href={"https://mupy-server.herokuapp.com"}> Discover your sound</a>
                     </div>
 
                 </section>
