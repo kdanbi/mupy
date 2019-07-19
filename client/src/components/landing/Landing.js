@@ -4,7 +4,7 @@ import '../../App.scss';
 import logo from './mupy_logo.svg';
 import mupy from './mupy_name.svg';
 import posed from 'react-pose';
-import heroku from "google.ca";
+const heroku = "https://mupy-server.herokuapp.com/";
 
 const Box = posed.div({
     hidden: { opacity: 0 },
