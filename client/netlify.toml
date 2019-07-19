@@ -5,5 +5,5 @@ command = "npm build"
 
 [[redirects]]
   from = "/*"
-  to = "/index.html"
+  to = "/chat"
   status = 200
