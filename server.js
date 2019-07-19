@@ -4,16 +4,19 @@ var request = require('request'); // "Request" library
 var querystring = require('querystring');
 var cookieParser = require('cookie-parser');
 var SpotifyWebApi = require('spotify-web-api-node');
- 
+
+const port = process.env.PORT || 8888;
+const URL = process.env.URL || "http://localhost:8888";
+
 var spotifyApi = new SpotifyWebApi({
   clientId: 'f5e8e6f86fdd4361a33a3daaa5bcf808',
   clientSecret: '71a41656726a455a9cc526e9cbf2b168',
-  redirectUri: 'http://localhost:3000/callback'
-});
+  redirectUri: `${URL}/callback/`
+}); 
 
 var client_id = 'f5e8e6f86fdd4361a33a3daaa5bcf808'; // Your client id
 var client_secret = '71a41656726a455a9cc526e9cbf2b168'; // Your secret
-var redirect_uri = 'http://localhost:3000/callback'; // Or Your redirect uri  
+var redirect_uri = `${URL}/callback/`; // Or Your redirect uri  
 
 spotifyApi.setAccessToken('BQAgDF8G422vVpHEZ8-0Nef3ryZFhAETlBJycgbEXtEy_CmvWuqvRMHJLXovl91tNYEThBDSnzu1hko-qKtiFRUaZRMIMruaKEMKXoDEuk6lbvW8THrdWMhdU5rJM3yJJMCf7IU6FuKcqwiXKpVO7MXd3W1SyqFvfzbt');
 
@@ -142,7 +145,7 @@ app.get('/refresh_token', function(req, res) {
   });
 });
 
-const port = process.env.PORT || 8888;
+
 app.listen(port, () => {
     console.log('server listening on 8888')
 })
