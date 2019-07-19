@@ -8,7 +8,7 @@ import SpotifyWebApiNode from "spotify-web-api-node";
 let spotifyApi = new SpotifyWebApiNode({
   clientId: "f5e8e6f86fdd4361a33a3daaa5bcf808",
   clientSecret: "71a41656726a455a9cc526e9cbf2b168",
-  redirectUri: "http://localhost:8888/callback"
+  redirectUri: "https://mupy-server.herokuapp.com/callback"
 });
 
 let data = {
