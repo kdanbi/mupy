@@ -1,7 +1,7 @@
 import React from 'react';
 import './landing.scss';
 import '../../App.scss';
-import logo from './mupy_logo.svg';
+import logo from './mupy_logo.png';
 import mupy from './mupy_name.svg';
 import posed from 'react-pose';
 
