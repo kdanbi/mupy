@@ -20,6 +20,7 @@ $landing-page: linear-gradient(0deg, #554B7B 36.17%, #47C2AC 89.43%);
             animation: shake 0.3s; 
             animation-iteration-count: infinite; 
             animation-delay: 4s;
+            width: 150px;
         }
         &--intro {
             visibility: hidden;
