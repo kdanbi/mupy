@@ -1,0 +1,14 @@
+html {
+  height: 100vh;
+}
+
+body {
+  text-align: center;
+  color: white;
+  height: 100%;
+}
+
+#root, .App {
+  height: 100%;
+}
+/*# sourceMappingURL=App.css.map */
