@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "b29ff0c31d65a936553d90ed66519a2d",
+    "revision": "bbe02da7e4c0e1ff88a3e20295175d23",
     "url": "/index.html"
   },
   {
-    "revision": "4d646c3e533657795403",
-    "url": "/static/css/main.b6e66370.chunk.css"
+    "revision": "c720e7445646670bd5dd",
+    "url": "/static/css/main.6c08eaa8.chunk.css"
   },
   {
     "revision": "f8617578e9005f244d2d",
     "url": "/static/js/2.bf1df6b3.chunk.js"
   },
   {
-    "revision": "4d646c3e533657795403",
-    "url": "/static/js/main.5e3088e8.chunk.js"
+    "revision": "c720e7445646670bd5dd",
+    "url": "/static/js/main.64ae48ce.chunk.js"
   },
   {
     "revision": "42ac5946195a7306e2a5",
@@ -32,8 +32,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/header-left.ed7d4d6b.svg"
   },
   {
-    "revision": "9ee847921596b48f61395d5b816a6bfa",
-    "url": "/static/media/mupy_logo.9ee84792.svg"
+    "revision": "731fe5d1e498e2d910470f6c06f9622b",
+    "url": "/static/media/mupy_logo.731fe5d1.png"
   },
   {
     "revision": "337e84c1248e810f7fab1888207cecff",
