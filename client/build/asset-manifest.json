@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/static/css/main.6c08eaa8.chunk.css",
-    "main.js": "/static/js/main.64ae48ce.chunk.js",
-    "main.js.map": "/static/js/main.64ae48ce.chunk.js.map",
+    "main.js": "/static/js/main.c2662308.chunk.js",
+    "main.js.map": "/static/js/main.c2662308.chunk.js.map",
     "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
     "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
     "static/js/2.bf1df6b3.chunk.js": "/static/js/2.bf1df6b3.chunk.js",
     "static/js/2.bf1df6b3.chunk.js.map": "/static/js/2.bf1df6b3.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.c273f7e828af1ffd45befcfacd45fd3f.js": "/precache-manifest.c273f7e828af1ffd45befcfacd45fd3f.js",
+    "precache-manifest.33167e3367b40f36dd663c2218d6e05a.js": "/precache-manifest.33167e3367b40f36dd663c2218d6e05a.js",
     "service-worker.js": "/service-worker.js",
     "static/css/main.6c08eaa8.chunk.css.map": "/static/css/main.6c08eaa8.chunk.css.map",
     "static/media/chat.scss": "/static/media/chatlogo.3d86faba.svg",
