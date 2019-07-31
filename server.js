@@ -5,18 +5,18 @@ var querystring = require('querystring');
 var cookieParser = require('cookie-parser');
 var SpotifyWebApi = require('spotify-web-api-node');
 
-//const port = process.env.PORT || 8888;
-const URL = "https://mupy-server.herokuapp.com";
+const port = process.env.PORT || 8888;
+//const URL = "https://mupy-server.herokuapp.com" //"http://localhost:8888";
 
 var spotifyApi = new SpotifyWebApi({
   clientId: process.env.CLIENT_ID,
   clientSecret: process.env.CLIENT_SECRET,
-  redirectUri: `${URL}/callback/`
+  redirectUri: `${port}/callback`
 }); 
 
-var client_id = process.env.CLIENT_ID; // Your client id
-var client_secret = process.env.CLIENT_SECRET; // Your secret
-var redirect_uri = `${URL}/callback/`; // Or Your redirect uri  
+var client_id = "f5e8e6f86fdd4361a33a3daaa5bcf808" //process.env.CLIENT_ID; // Your client id
+var client_secret = "71a41656726a455a9cc526e9cbf2b168" //process.env.CLIENT_SECRET; // Your secret
+var redirect_uri = `${port}/callback`; // Or Your redirect uri  
 
 spotifyApi.setAccessToken(process.env.ACCESS_TOKEN);
 
@@ -145,6 +145,6 @@ app.get('/refresh_token', function(req, res) {
   });
 });
 
-app.listen(process.env.PORT || 3000, function(){
+app.listen(process.env.PORT || 8888, function(){
   console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
 });

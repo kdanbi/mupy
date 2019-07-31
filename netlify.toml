@@ -2,3 +2,6 @@
 base = "client/"
 publish = "client/build/"
 command = "npm run-script build"
+
+[redirect]
+/chat/*         /chat              301
