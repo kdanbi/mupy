@@ -10,7 +10,7 @@ const Box = posed.div({
     visible: { opacity: 1 }
 });
 
-//const URL = "https://mupy-server.herokuapp.com";
+const URL = "https://mupy-server.herokuapp.com";
 
 export default class Landing extends React.Component {
     state = {
@@ -35,7 +35,7 @@ export default class Landing extends React.Component {
                 <section className="landing-page">
                     <div className="landing-page__partB">
                         <img pose={this.state.isVisible ? 'visible' : 'hidden'} className="landing-page__partB---logo" src={mupy} alt="logo" />
-                        <a className="landing-page__partB--intro" href="test"> Discover your sound</a>
+                        <a className="landing-page__partB--intro" href={URL}> Discover your sound</a>
                     </div>
 
                 </section>
