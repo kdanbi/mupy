@@ -3,7 +3,7 @@ var express = require('express'); // Express web server framework
 var request = require('request'); // "Request" library
 var querystring = require('querystring');
 var cookieParser = require('cookie-parser');
-var SpotifyWebApi = require('spotify-web-api-node');
+var SpotifyWebApi = require('spotify-web-api-node');;
 
 //const port = process.env.PORT || 8888;
 const URL = "https://mupy-server.herokuapp.com" //"http://localhost:8888";
